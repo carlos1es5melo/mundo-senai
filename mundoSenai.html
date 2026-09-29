@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mundo SENAI – Bancada de montagem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@700&display=swap">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js"defer></script>
+</head>
+<body>
+<div class="site">
+  <header>
+    <button class="logo" onclick="mostrarPagina('bancada')">SENAI</button>
+
+    <nav>
+      <div class="caixa-menu">
+        <button class="botao-menu" onclick="alternarMenu()">Sobre ▾</button>
+        <ul class="lista-menu" id="menuSobre">
+          <li><button onclick="mostrarPagina('bancada')"><span class="bolinha-icone"></span> Bancada de montagem</button></li>
+          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
+          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
+          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
+          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
+          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
+        </ul>
+      </div>
+      <button class="botao-menu" onclick="mostrarPagina('contato')">Contato</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pagina ativa" id="bancada">
+      <div class="coluna-imagem">
+        <img src="./bancada_montagem.jpg" alt="bancada">
+      </div>
+      <div class="coluna-texto">
+        <h1><span class="linha-azul">Mundo SENAI</span><span class="linha-cinza">Bancada de montagem</span></h1>
+        <p>Nesta bancada, um braço robótico trabalha junto com o aluno. Ele repete os movimentos com precisão, e a pessoa cuida das decisões.</p>
+        <p>É aqui que a turma aprende, na prática, como a automação entra na linha de produção.</p>
+        <ul class="tags"><li>Robótica</li><li>Automação</li><li>Indústria 4.0</li></ul>
+        <button class="botao-acao" onclick="mostrarPagina('projeto')">Conhecer o projeto</button>
+      </div>
+      <div class="bloco-extra">
+        <div class="grade-extra">
+          <div class="item-extra">
+            <h3>Precisão</h3>
+            <p>O braço repete o mesmo movimento centenas de vezes sem perder a exatidão.</p>
+          </div>
+          <div class="item-extra">
+            <h3>Segurança</h3>
+            <p>Sensores param o equipamento se alguém chegar perto demais.</p>
+          </div>
+          <div class="item-extra">
+            <h3>Aprendizado</h3>
+            <p>A turma programa cada etapa e vê o resultado na prática.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloco-simples">
+        <h2>Título do bloco</h2>
+        <p>Escreva aqui um textinho curto explicando o que quiser sobre esse assunto.</p>
+      </div>
+    </section>
+
+    <section class="pagina" id="projeto">
+      <div class="coluna-imagem">
+        <img src="./bancada_montagem.jpg" alt="bancada">
+      </div>
+      <div class="coluna-texto">
+        <h1><span class="linha-azul">O projeto</span><span class="linha-cinza">Como funciona</span></h1>
+        <p>O braço pega peças e encaixa em sequência. A turma programa a velocidade, o caminho e os pontos de parada.</p>
+        <p>O objetivo é simular, com segurança, uma linha de montagem de verdade.</p>
+        <ul class="tags"><li>Programação</li><li>Segurança</li></ul>
+      </div>
+    </section>
+
+    <!-- Página 3: Equipe -->
+    <section class="pagina" id="equipe">
+      <div class="coluna-imagem">
+
+      </div>
+      <div class="coluna-texto">
+        <h1><span class="linha-azul">Equipe</span><span class="linha-cinza">Quem fez este site</span></h1>
+        <ul class="lista-equipe">
+          <li><span class="avatar">C</span> Carlos</li>
+          <li><span class="avatar">M</span> Miguel Alves</li>
+          <li><span class="avatar">M</span> Miguel da Silva</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Página 4: Contato -->
+    <section class="pagina" id="contato">
+      <div class="coluna-texto">
+        <h1><span class="linha-azul">Contato</span><span class="linha-cinza">Fale com a gente</span></h1>
+        <p>Quer saber mais sobre a bancada? Escreva pra gente.</p>
+        <button class="botao-acao" onclick="mostrarPagina('equipe')">Integrantes</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>Feito por Carlos, Miguel Alves e Miguel da silva</footer>
+</div>
+</body>
+</html>

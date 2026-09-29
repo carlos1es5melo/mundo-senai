@@ -1,0 +1,324 @@
+
+  /* ===================================================
+     CORES E FONTE — mude aqui pra mudar o site inteiro
+  =================================================== */
+  :root{
+    --azul: #005CAB;
+    --azul-escuro: #00417a;
+    --azul-clarinho: #e6f0fa;
+    --fundo: #eef2f7;
+    --texto: #1b2430;
+    --cinza: #5d6875;
+    --borda: #d9e1ea;
+  }
+
+  * { box-sizing: border-box; }
+
+  body{
+    margin: 0;
+    font-family: Barlow, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .site{
+    max-width: 1180px;
+    width: 100%;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0,50,100,0.15);
+  }
+
+  /* ===================================================
+     CABEÇALHO
+  =================================================== */
+  header{
+    background: var(--azul);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+  }
+
+  .logo{
+    color: white;
+    font: italic 700 36px Barlow, sans-serif;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  nav{ display: flex; gap: 10px; }
+
+  .botao-menu{
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+    font: 500 16px Barlow, sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .botao-menu:hover{ background: rgba(255,255,255,0.3); }
+
+  /* ===================================================
+     MENU "SOBRE" — abre igual um select
+  =================================================== */
+  .caixa-menu{ position: relative; }
+
+  .lista-menu{
+    position: absolute;
+    top: 54px;
+    right: 0;
+    width: 270px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 45px rgba(0,30,70,0.3);
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    display: none;
+  }
+
+  .lista-menu.aberto{ display: block; }
+
+  .lista-menu button{
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font: 500 15px Barlow, sans-serif;
+    color: var(--texto);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .lista-menu button:hover{ background: var(--azul-clarinho); }
+
+  .bolinha-icone{
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--azul-clarinho);
+    color: var(--azul);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  /* ===================================================
+     CONTEÚDO (imagem + texto)
+  =================================================== */
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+  }
+
+  .pagina{ display: none; }
+  .pagina.ativa{ display: contents; }
+
+  .coluna-imagem{
+    background: white;
+    border-right: 1px solid var(--borda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .coluna-imagem img{
+    max-width: 100%;
+    max-height: 480px;
+  }
+
+  .coluna-texto{
+    background: #f8fafc;
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .coluna-texto h1{
+    font: 700 48px "Barlow Condensed", sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 22px;
+  }
+
+  /* na página de Contato, o texto ocupa o espaço todo */
+    #contato .coluna-texto{
+      grid-column: 1 / -1;
+      align-items: center;
+      text-align: center;
+    }
+
+    #contato .coluna-texto p{
+      max-width: 60ch;
+    }
+
+    #contato .botao-acao{
+      align-self: center;
+    }
+
+    .linha-azul{ color: var(--azul); display: block; }
+    .linha-cinza{ color: var(--cinza); display: block; }
+    
+    .coluna-texto p{
+      font-size: 17px;
+      max-width: 55ch;
+      margin: 0 0 14px;
+    }
+
+  /* bloco extra que pode ser colocado dentro de qualquer seção */
+    .bloco-extra{
+      grid-column: 1 / -1;   /* ocupa as 2 colunas do grid, de ponta a ponta */
+      border-top: 1px solid var(--borda);
+      background: #2b333f;
+      padding: 40px;
+    }
+
+    .grade-extra{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .item-extra h3{
+      color: white;
+      font: 700 20px "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+
+    .item-extra p{
+      color: #c7cdd6;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    
+
+    @media (max-width: 800px){
+      .grade-extra{
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* bloco extra simples, sem grid, fundo padrão do site */
+    .bloco-simples{
+      grid-column: 1 / -1;
+      border-top: 1px solid var(--borda);
+      background: var(--fundo);
+      padding: 40px 56px;
+    }
+    
+    .bloco-simples h2{
+      font: 700 28px "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      color: var(--texto);
+      margin: 0 0 10px;
+    }
+    
+    .bloco-simples p{
+      color: var(--cinza);
+      font-size: 16px;
+      max-width: 70ch;
+      margin: 0;
+    }
+
+  /* tags coloridas tipo "Robótica", "Automação" */
+  .tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+    margin: 8px 0 0;
+  }
+
+  .tags li{
+    background: var(--azul-clarinho);
+    color: var(--azul);
+    border-radius: 99px;
+    padding: 6px 14px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .botao-acao{
+    margin-top: 22px;
+    background: var(--azul);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 26px;
+    font: 600 16px Barlow, sans-serif;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s;
+  }
+
+  .botao-acao:hover{ background: var(--azul-escuro); }
+
+  /* Lista da equipe */
+  .lista-equipe{ list-style: none; padding: 0; max-width: 460px; }
+
+  .lista-equipe li{
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--azul);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  /* ===================================================
+     RODAPÉ
+  =================================================== */
+  footer{
+    text-align: center;
+    padding: 16px;
+    color: var(--cinza);
+    background: #f0f2f5;
+    border-top: 1px solid var(--borda);
+    font-size: 14px;
+  }
+
+  /* ===================================================
+     CELULAR
+  =================================================== */
+  @media (max-width: 800px){
+    main{ grid-template-columns: 1fr; }
+    .coluna-imagem{ border-right: none; border-bottom: 1px solid var(--borda); }
+    .coluna-texto{ padding: 32px 24px; }
+    .coluna-texto h1{ font-size: 38px; }
+  }
