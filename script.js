@@ -10,4 +10,7 @@ function mostrarPagina(id){
   document.getElementById('menuSobre').classList.remove('aberto')
 }
 
- 
+// abre e fecha o menu hambúrguer (mobile)
+function alternarMenuMobile(){
+  document.getElementById('menuMobile').classList.toggle('aberto');
+}

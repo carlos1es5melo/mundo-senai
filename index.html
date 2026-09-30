@@ -10,24 +10,30 @@
 </head>
 <body>
 <div class="site">
-  <header>
+    <header>
     <button class="logo" onclick="mostrarPagina('bancada')">SENAI</button>
-
+    
     <nav>
       <div class="caixa-menu">
         <button class="botao-menu" onclick="alternarMenu()">Sobre ▾</button>
         <ul class="lista-menu" id="menuSobre">
-          <li><button onclick="mostrarPagina('bancada')"><span class="bolinha-icone"></span> Bancada de montagem</button></li>
-          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
-          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
-          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
-          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
-          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone"></span> Projeto</button></li>
+          <li><button onclick="mostrarPagina('bancada')"><span class="bolinha-icone">B</span> Bancada de montagem</button></li>
+          <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone">P</span> O projeto</button></li>
         </ul>
       </div>
       <button class="botao-menu" onclick="mostrarPagina('contato')">Contato</button>
     </nav>
+  
+    <!-- botão hambúrguer: só aparece em telas pequenas -->
+    <button class="botao-hamburguer" onclick="alternarMenuMobile()" aria-label="Abrir menu">☰</button>
   </header>
+  
+  <!-- menu mobile: só aparece em telas pequenas -->
+  <ul class="menu-mobile" id="menuMobile">
+    <li><button onclick="mostrarPagina('bancada')">Bancada de montagem</button></li>
+    <li><button onclick="mostrarPagina('projeto')">O projeto</button></li>
+    <li><button onclick="mostrarPagina('contato')">Contato</button></li>
+  </ul>
 
   <main>
     <section class="pagina ativa" id="bancada">
@@ -62,6 +68,10 @@
         <h2>Título do bloco</h2>
         <p>Escreva aqui um textinho curto explicando o que quiser sobre esse assunto.</p>
       </div>
+      <div class="bloco-simples bloco2">
+        <h2>Título do bloco</h2>
+        <p>Escreva aqui um textinho curto explicando o que quiser sobre esse assunto.</p>
+      </div>
     </section>
 
     <section class="pagina" id="projeto">
@@ -73,6 +83,31 @@
         <p>O braço pega peças e encaixa em sequência. A turma programa a velocidade, o caminho e os pontos de parada.</p>
         <p>O objetivo é simular, com segurança, uma linha de montagem de verdade.</p>
         <ul class="tags"><li>Programação</li><li>Segurança</li></ul>
+      </div>
+
+      <div class="bloco-extra">
+      <div class="grade-extra2">
+      
+          <!-- extra1: título -->
+          <div class="item-extra extra1">
+            <h3>O robô UR3e</h3>
+            <p>Um braço robótico colaborativo, feito para trabalhar lado a lado com pessoas, sem precisar de uma gaiola de proteção.</p>
+          </div>
+        
+          <!-- extra2: imagem + como funciona -->
+          <div class="item-extra extra2">
+            <img src="./ur3e.jpg" alt="Braço robótico UR3e" class="img-extra">
+            <h3>Como funciona</h3>
+            <p>Ele tem 6 juntas, igual um braço humano, o que permite girar e alcançar peças em quase qualquer ângulo. Sensores de força fazem o robô parar assim que encosta em algo, o que garante segurança pra quem trabalha perto dele.</p>
+          </div>
+        
+          <!-- extra3: aplicação na bancada -->
+          <div class="item-extra extra3">
+            <h3>Na bancada de montagem</h3>
+            <p>Aqui, o UR3e pega peças pequenas e posiciona cada uma no lugar certo, repetindo o movimento com a mesma precisão sempre. A turma programa a rota e os pontos de parada, e acompanha o robô montando a peça em tempo real.</p>
+          </div>
+        
+        </div>
       </div>
     </section>
 
