@@ -19,6 +19,7 @@
         <ul class="lista-menu" id="menuSobre">
           <li><button onclick="mostrarPagina('bancada')"><span class="bolinha-icone">B</span> Bancada de montagem</button></li>
           <li><button onclick="mostrarPagina('projeto')"><span class="bolinha-icone">P</span> O projeto</button></li>
+          <li><button onclick="mostrarPagina('tecnologia')"><span class="bolinha-icone">T</span> Tecnologia</button></li>
         </ul>
       </div>
       <button class="botao-menu" onclick="mostrarPagina('contato')">Contato</button>
@@ -32,51 +33,83 @@
   <ul class="menu-mobile" id="menuMobile">
     <li><button onclick="mostrarPagina('bancada')">Bancada de montagem</button></li>
     <li><button onclick="mostrarPagina('projeto')">O projeto</button></li>
+    <li><button onclick="mostrarPagina('tecnologia')">Tecnologia</button></li>
     <li><button onclick="mostrarPagina('contato')">Contato</button></li>
+
   </ul>
 
   <main>
     <section class="pagina ativa" id="bancada">
       <div class="coluna-imagem">
-        <img src="./bancada_montagem.jpg" alt="bancada">
+        <img src="./img/bancada_montagem.jpg" alt="Bancada de montagem">
       </div>
+    
       <div class="coluna-texto">
-        <h1><span class="linha-azul">Mundo SENAI</span><span class="linha-cinza">Bancada de montagem</span></h1>
-        <p>Nesta bancada, um braço robótico trabalha junto com o aluno. Ele repete os movimentos com precisão, e a pessoa cuida das decisões.</p>
-        <p>É aqui que a turma aprende, na prática, como a automação entra na linha de produção.</p>
-        <ul class="tags"><li>Robótica</li><li>Automação</li><li>Indústria 4.0</li></ul>
-        <button class="botao-acao" onclick="mostrarPagina('projeto')">Conhecer o projeto</button>
+        <h1>
+          <span class="linha-azul">Mundo SENAI</span>
+          <span class="linha-cinza">Bancada de montagem</span>
+        </h1>
+      
+        <p>
+          Este site foi criado com o objetivo de apresentar a Bancada Smart 4.0,
+          equipamento que estudamos e conhecemos ao longo das aulas de automação
+          industrial.
+        </p>
+      
+        <p>
+          Durante esse período, aprendemos sobre o funcionamento da bancada, seus
+          equipamentos e a integração entre robótica, sensores, CLP e outros
+          sistemas de automação. Aqui reunimos parte desse conhecimento para
+          explicar como esses elementos trabalham juntos em um processo industrial.
+        </p>
+      
+        <ul class="tags">
+          <li>Robótica</li>
+          <li>Automação</li>
+          <li>Indústria 4.0</li>
+        </ul>
+      
+        <button class="botao-acao" onclick="mostrarPagina('projeto')">
+          Conhecer o projeto
+        </button>
       </div>
+    
       <div class="bloco-extra">
         <div class="grade-extra">
+        
           <div class="item-extra">
-            <h3>Precisão</h3>
-            <p>O braço repete o mesmo movimento centenas de vezes sem perder a exatidão.</p>
+            <h3>O que aprendemos</h3>
+            <p>
+              Ao longo das aulas, tivemos contato com diferentes conceitos de
+              automação e pudemos entender na prática como os equipamentos de uma
+              célula industrial trabalham em conjunto.
+            </p>
           </div>
+        
           <div class="item-extra">
-            <h3>Segurança</h3>
-            <p>Sensores param o equipamento se alguém chegar perto demais.</p>
+            <h3>A bancada</h3>
+            <p>
+              A Bancada Smart 4.0 reúne diferentes tecnologias utilizadas na
+              indústria, permitindo observar e estudar um processo automatizado.
+            </p>
           </div>
+        
           <div class="item-extra">
-            <h3>Aprendizado</h3>
-            <p>A turma programa cada etapa e vê o resultado na prática.</p>
+            <h3>Nosso objetivo</h3>
+            <p>
+              Reunir neste site o que aprendemos e apresentar de forma simples
+              como a bancada funciona e como seus principais componentes se
+              integram durante o processo.
+            </p>
           </div>
+        
         </div>
-      </div>
-
-      <div class="bloco-simples">
-        <h2>Título do bloco</h2>
-        <p>Escreva aqui um textinho curto explicando o que quiser sobre esse assunto.</p>
-      </div>
-      <div class="bloco-simples bloco2">
-        <h2>Título do bloco</h2>
-        <p>Escreva aqui um textinho curto explicando o que quiser sobre esse assunto.</p>
       </div>
     </section>
 
     <section class="pagina" id="projeto">
       <div class="coluna-imagem">
-        <img src="./bancada_montagem.jpg" alt="bancada">
+        <img src="./img/bancada_montagem.jpg" alt="bancada">
       </div>
       <div class="coluna-texto">
         <h1><span class="linha-azul">O projeto</span><span class="linha-cinza">Como funciona</span></h1>
@@ -86,35 +119,77 @@
       </div>
 
       <div class="bloco-extra">
-      <div class="grade-extra2">
+        <div class="grade-extra2">
       
-          <!-- extra1: título -->
-          <div class="item-extra extra1">
-            <h3>O robô UR3e</h3>
-            <p>Um braço robótico colaborativo, feito para trabalhar lado a lado com pessoas, sem precisar de uma gaiola de proteção.</p>
-          </div>
-        
-          <!-- extra2: imagem + como funciona -->
-          <div class="item-extra extra2">
-            <img src="./ur3e.jpg" alt="Braço robótico UR3e" class="img-extra">
-            <h3>Como funciona</h3>
-            <p>Ele tem 6 juntas, igual um braço humano, o que permite girar e alcançar peças em quase qualquer ângulo. Sensores de força fazem o robô parar assim que encosta em algo, o que garante segurança pra quem trabalha perto dele.</p>
-          </div>
-        
-          <!-- extra3: aplicação na bancada -->
-          <div class="item-extra extra3">
-            <h3>Na bancada de montagem</h3>
-            <p>Aqui, o UR3e pega peças pequenas e posiciona cada uma no lugar certo, repetindo o movimento com a mesma precisão sempre. A turma programa a rota e os pontos de parada, e acompanha o robô montando a peça em tempo real.</p>
-          </div>
-        
+        <!-- VISÃO GERAL -->
+        <div class="item-extra extra1">
+          <h3>UR3e na Bancada Smart 4.0</h3>
+          <p>
+            Na Bancada Smart 4.0, o UR3e atua como o manipulador robótico da célula.
+            Ele trabalha integrado aos sensores, CLP, atuadores e outros equipamentos,
+            formando um sistema de automação industrial. Dessa forma, o robô recebe
+            informações do sistema e executa as ações programadas.
+          </p>
         </div>
+      
+        <!-- FUNÇÃO -->
+        <div class="item-extra extra2">
+          <img src="./img/ur3e.jpg" alt="Braço robótico UR3e" class="img-extra">
+          <h3>Função do UR3e</h3>
+          <p>
+            O robô é utilizado principalmente para movimentar e montar componentes.
+            Ele pode pegar peças, transportá-las e posicioná-las em locais específicos,
+            realizando tarefas que exigem precisão e repetibilidade.
+          </p>
+        </div>
+      
+        <!-- COMUNICAÇÃO -->
+        <div class="item-extra extra3">
+          <h3>Integração com o sistema</h3>
+          <p>
+            O UR3e não trabalha sozinho. Sensores identificam as condições do processo
+            e o sistema de controle envia as informações necessárias para que o robô
+            execute cada etapa no momento correto.
+          </p>
+        </div>
+      
+        <!-- INÍCIO DO PROCESSO -->
+        <div class="item-extra extra4">
+          <h3>Início do processo</h3>
+          <p>
+            O ciclo começa quando os sensores identificam que uma peça está disponível
+            ou que uma nova etapa pode ser iniciada. A partir disso, o sistema libera
+            o robô para executar a sequência programada.
+          </p>
+        </div>
+      
+        <!-- MOVIMENTAÇÃO -->
+        <div class="item-extra extra5">
+          <h3>Movimentação</h3>
+          <p>
+            O UR3e utiliza seus seis eixos para alcançar diferentes posições. Ele se
+            movimenta até o ponto de coleta, aciona a ferramenta instalada em sua
+            extremidade e pega o componente.
+          </p>
+        </div>
+      
+        <!-- MONTAGEM -->
+        <div class="item-extra extra6">
+          <h3>Montagem e repetição</h3>
+          <p>
+            Depois de pegar a peça, o robô a transporta até o local determinado e
+            realiza a operação de montagem. Ao terminar, libera o componente e pode
+            retornar à posição inicial ou iniciar uma nova etapa.
+          </p>
+        </div>
+    </div>
       </div>
     </section>
 
     <!-- Página 3: Equipe -->
     <section class="pagina" id="equipe">
       <div class="coluna-imagem">
-
+        <img src="./img/grupo.png" alt="">
       </div>
       <div class="coluna-texto">
         <h1><span class="linha-azul">Equipe</span><span class="linha-cinza">Quem fez este site</span></h1>
@@ -132,6 +207,63 @@
         <h1><span class="linha-azul">Contato</span><span class="linha-cinza">Fale com a gente</span></h1>
         <p>Quer saber mais sobre a bancada? Escreva pra gente.</p>
         <button class="botao-acao" onclick="mostrarPagina('equipe')">Integrantes</button>
+      </div>
+    </section>
+
+    <!-- Página: Tecnologia da bancada -->
+    <section class="pagina" id="tecnologia">
+      <div class="hero-imagem">
+        <img src="./img/smart4_0.png" alt="Bancada SMART 4.0">
+      </div>
+      <div class="coluna-texto">
+        <h1><span class="linha-azul">Tecnologia</span><span class="linha-cinza">Por trás da SMART 4.0</span></h1>
+        <p>Desenvolvida pela Exxer, a bancada é referência em Indústria 4.0 nos institutos SENAI. Ela coloca humanos e robôs colaborativos dividindo o mesmo espaço de forma segura, aplicando o conceito de Operador 4.0.</p>
+        <p>É compatível com robôs de marcas líderes: UR3 e UR5 (Universal Robots), a linha TM da Omron, com visão computacional nativa, e os modelos CR3 e CR5 da Dobot, com bom custo-benefício e IA integrada.</p>
+        <ul class="tags"><li>UR3 / UR5</li><li>Omron TM</li><li>Dobot CR</li></ul>
+      </div>
+    
+      <div class="bloco-extra">
+        <div class="grade-extra">
+          <div class="item-extra">
+            <h3>Segurança (NR-12)</h3>
+            <p>A bancada troca as grades físicas por barreiras tecnológicas: sensores de força, scanners de área, botões de emergência redundantes e limitadores de torque. Baseada na Nota Técnica nº 31 e nas normas ISO 10218 e ISO/TS 15066, ela faz o robô desacelerar ou parar assim que detecta o aluno por perto.</p>
+          </div>
+          <div class="item-extra">
+            <h3>Cibersegurança</h3>
+            <p>O OPC UA usa certificados digitais X.509 para autenticar conexões, e o MQTT roda sobre TLS/SSL (MQTTS), com login e permissões restritas de publicação. Um firewall industrial ainda isola robôs e sensores numa rede própria, obrigando qualquer acesso externo a passar pelo gateway Edge do Node-RED.</p>
+          </div>
+          <div class="item-extra">
+            <h3>Gêmeo digital</h3>
+            <p>Antes de mover o robô de verdade, o aluno testa e valida a rotina numa simulação virtual. Essa prática, chamada Digital Twin, evita erros, colisões e desgaste desnecessário do equipamento real.</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="bloco-simples">
+        <h2>Como os dados se comunicam</h2>
+        <p>Três protocolos conectam a bancada, do sensor até a nuvem, cada um com um papel diferente:</p>
+      </div>
+    
+      <div class="bloco-extra2">
+        <div class="grade-extra">
+          <div class="item-extra2">
+            <h3>IO-Link</h3>
+            <p>Liga sensores, garras e atuadores ao controlador. É rápido (2 a 20 milissegundos) e avisa sobre problemas antes que aconteçam, como uma lente suja ou superaquecimento. Limitação: o cabo não pode passar de 20 metros.</p>
+          </div>
+          <div class="item-extra2">
+            <h3>OPC UA</h3>
+            <p>Faz a ponte entre os CLPs (como o Siemens S7-1500) e sistemas como o Node-RED, trocando dados detalhados em boa velocidade. Em troca, exige uma configuração inicial mais complexa.</p>
+          </div>
+          <div class="item-extra2">
+            <h3>MQTT</h3>
+            <p>Envia dados até dashboards na nuvem, em milissegundos e consumindo pouca internet. Não serve para controlar o robô em tempo real, mas é perfeito para monitoramento remoto.</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="bloco-simples">
+        <h2>Customização em massa e rastreabilidade</h2>
+        <p>Em vez de produzir só peças idênticas, a bancada ensina o conceito de Customização em Massa: no projeto Smart Block, o aluno faz um pedido personalizado numa loja virtual, e o sistema MES ajusta a rotina do robô automaticamente para aquele pedido. Cada peça carrega sua própria "receita" de fabricação numa etiqueta RFID, lida pelas antenas em cada estação para guiar o processo de montagem. Em versões mais avançadas, a bancada ainda combina visão computacional 3D para correções milimétricas e pode interagir com robôs móveis autônomos, os chamados MoMas.</p>
       </div>
     </section>
 

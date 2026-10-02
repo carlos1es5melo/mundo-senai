@@ -200,6 +200,12 @@ main{
   background: #2b333f;
   padding: 40px;
 }
+.bloco-extra2{
+  grid-column: 1 / -1;   /* ocupa as 2 colunas do grid, de ponta a ponta */
+  border-top: 1px solid var(--borda);
+  background: var(--fundo-alt);
+  padding: 40px;
+}
 
 /* grid simples de 3 colunas iguais, usado na página Bancada */
 .grade-extra{
@@ -225,6 +231,7 @@ main{
   grid-template-areas:
    "extra1 extra1 extra1" 
    "extra2 extra2 extra3"
+   "extra4 extra5 extra6"
   ;
   gap: 24px;
 }
@@ -232,6 +239,9 @@ main{
 .extra1{ grid-area: extra1; }
 .extra2{ grid-area: extra2; }
 .extra3{ grid-area: extra3; }
+.extra4{ grid-area: extra4; }
+.extra5{ grid-area: extra5; }
+.extra6{ grid-area: extra6; }
 
 .extra1 p{
   text-align: center;
@@ -257,6 +267,29 @@ main{
 
 .item-extra p{
   color: #c7cdd6;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.item-extra2{
+  background: var(--fundo);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-extra2 h3{
+  color: var(--azul);
+  font: 700 26px "Barlow Condensed", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.item-extra2 p{
+  color: var(--azul-escuro);
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
@@ -299,6 +332,9 @@ main{
       "extra1"
       "extra2"
       "extra3"
+      "extra4"
+      "extra5"
+      "extra6"
     ;
   }
 }
@@ -330,6 +366,37 @@ main{
   font-size: 16px;
   max-width: 70ch;
   margin: 0;
+}
+
+/* ===================================================
+   HERO — imagem em banner, ocupando a largura toda
+=================================================== */
+.hero-imagem{
+  grid-column: 1 / -1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-imagem img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* quando a página usa hero, o texto também ocupa a largura toda,
+   ficando abaixo do banner em vez de do lado */
+.hero-texto{
+  grid-column: 1 / -1;
+}
+
+/* Página Tecnologia: conteúdo em largura total */
+main:has(#tecnologia.ativa){
+  display: block;
+}
+
+#tecnologia .coluna-texto{
+  width: 100%;
+  padding: 56px;
 }
 
 /* ===================================================
