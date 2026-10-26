@@ -1,7 +1,7 @@
 /* ===================================================
    CORES E FONTE — mude aqui pra mudar o site inteiro
 =================================================== */
-:root{
+:root {
   --azul: #005CAB;
   --azul-escuro: #00417a;
   --azul-clarinho: #e6f0fa;
@@ -14,9 +14,11 @@
 
 /* box-sizing global: padding e borda contam DENTRO da largura do elemento,
    assim não precisa fazer conta pra descobrir o tamanho final de nada */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-body{
+body {
   margin: 0;
   font-family: Barlow, sans-serif;
   background: var(--fundo);
@@ -27,19 +29,19 @@ body{
 }
 
 /* caixa branca principal que contém o site inteiro */
-.site{
+.site {
   max-width: 1180px;
   width: 100%;
   background: white;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 18px 50px rgba(0,50,100,0.15);
+  box-shadow: 0 18px 50px rgba(0, 50, 100, 0.15);
 }
 
 /* ===================================================
    CABEÇALHO
 =================================================== */
-header{
+header {
   background: var(--azul);
   display: flex;
   align-items: center;
@@ -47,7 +49,7 @@ header{
   padding: 18px 28px;
 }
 
-.logo{
+.logo {
   color: white;
   font: italic 700 36px Barlow, sans-serif;
   background: none;
@@ -55,10 +57,13 @@ header{
   cursor: pointer;
 }
 
-nav{ display: flex; gap: 10px; }
+nav {
+  display: flex;
+  gap: 10px;
+}
 
-.botao-menu{
-  background: rgba(255,255,255,0.15);
+.botao-menu {
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   border: none;
   border-radius: 8px;
@@ -68,30 +73,36 @@ nav{ display: flex; gap: 10px; }
   transition: background 0.2s;
 }
 
-.botao-menu:hover{ background: rgba(255,255,255,0.3); }
+.botao-menu:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
 
 /* ===================================================
    MENU "SOBRE" — abre igual um select
 =================================================== */
-.caixa-menu{ position: relative; }
+.caixa-menu {
+  position: relative;
+}
 
-.lista-menu{
+.lista-menu {
   position: absolute;
   top: 54px;
   right: 0;
   width: 270px;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 20px 45px rgba(0,30,70,0.3);
+  box-shadow: 0 20px 45px rgba(0, 30, 70, 0.3);
   list-style: none;
   margin: 0;
   padding: 8px;
   display: none;
 }
 
-.lista-menu.aberto{ display: block; }
+.lista-menu.aberto {
+  display: block;
+}
 
-.lista-menu button{
+.lista-menu button {
   width: 100%;
   text-align: left;
   background: none;
@@ -106,9 +117,11 @@ nav{ display: flex; gap: 10px; }
   gap: 12px;
 }
 
-.lista-menu button:hover{ background: var(--azul-clarinho); }
+.lista-menu button:hover {
+  background: var(--azul-clarinho);
+}
 
-.bolinha-icone{
+.bolinha-icone {
   flex: none;
   width: 34px;
   height: 34px;
@@ -124,21 +137,25 @@ nav{ display: flex; gap: 10px; }
 /* ===================================================
    CONTEÚDO PRINCIPAL (imagem + texto de cada página)
 =================================================== */
-main{
+main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 520px;
 }
 
 /* só a página "ativa" aparece; as outras ficam escondidas */
-.pagina{ display: none; }
+.pagina {
+  display: none;
+}
 
 /* display: contents faz os FILHOS da seção (imagem, texto, blocos extras)
    entrarem direto no grid do <main>, como se a <section> não existisse.
    É por isso que .bloco-extra consegue esticar a largura toda por baixo. */
-.pagina.ativa{ display: contents; }
+.pagina.ativa {
+  display: contents;
+}
 
-.coluna-imagem{
+.coluna-imagem {
   background: white;
   border-right: 1px solid var(--borda);
   display: flex;
@@ -147,12 +164,12 @@ main{
   padding: 24px;
 }
 
-.coluna-imagem img{
+.coluna-imagem img {
   max-width: 100%;
   max-height: 480px;
 }
 
-.coluna-texto{
+.coluna-texto {
   background: #f8fafc;
   padding: 56px;
   display: flex;
@@ -160,104 +177,131 @@ main{
   justify-content: center;
 }
 
-.coluna-texto h1{
+.coluna-texto h1 {
   font: 700 48px "Barlow Condensed", sans-serif;
   text-transform: uppercase;
   line-height: 1;
   margin: 0 0 22px;
 }
 
-.linha-azul{ color: var(--azul); display: block; }
-.linha-cinza{ color: var(--cinza); display: block; }
+.linha-azul {
+  color: var(--azul);
+  display: block;
+}
 
-.coluna-texto p{
+.linha-cinza {
+  color: var(--cinza);
+  display: block;
+}
+
+.coluna-texto p {
   font-size: 17px;
   max-width: 55ch;
   margin: 0 0 14px;
 }
 
 /* na página de Contato, o texto ocupa o espaço todo (as 2 colunas) */
-#contato .coluna-texto{
+#contato .coluna-texto {
   grid-column: 1 / -1;
   align-items: center;
   text-align: center;
 }
 
-#contato .coluna-texto p{
+#contato .coluna-texto p {
   max-width: 60ch;
 }
 
-#contato .botao-acao{
+#contato .botao-acao {
   align-self: center;
 }
 
 /* ===================================================
    BLOCO EXTRA — fundo escuro, pra colocar em qualquer página
 =================================================== */
-.bloco-extra{
-  grid-column: 1 / -1;   /* ocupa as 2 colunas do grid, de ponta a ponta */
+.bloco-extra {
+  grid-column: 1 / -1;
+  /* ocupa as 2 colunas do grid, de ponta a ponta */
   border-top: 1px solid var(--borda);
   background: #2b333f;
   padding: 40px;
 }
-.bloco-extra2{
-  grid-column: 1 / -1;   /* ocupa as 2 colunas do grid, de ponta a ponta */
+
+.bloco-extra2 {
+  grid-column: 1 / -1;
+  /* ocupa as 2 colunas do grid, de ponta a ponta */
   border-top: 1px solid var(--borda);
   background: var(--fundo-alt);
   padding: 40px;
 }
 
 /* grid simples de 3 colunas iguais, usado na página Bancada */
-.grade-extra{
+.grade-extra {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-@media (max-width: 800px){
-  .grade-extra{
+@media (max-width: 800px) {
+  .grade-extra {
     grid-template-columns: 1fr;
   }
 }
 
 /* grid com áreas nomeadas, usado na página Projeto (título em cima,
    card maior à esquerda embaixo, card menor à direita embaixo) */
-.grade-extra2{
+.grade-extra2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* "auto" deixa cada linha crescer conforme o conteúdo -
      assim a imagem dentro do extra2 não fica cortada nem estica demais */
   grid-template-rows: auto minmax(220px, auto);
   grid-template-areas:
-   "extra1 extra1 extra1" 
-   "extra2 extra2 extra3"
-   "extra4 extra5 extra6"
+    "extra1 extra1 extra1"
+    "extra2 extra2 extra3"
+    "extra4 extra5 extra6"
   ;
   gap: 24px;
 }
 
-.extra1{ grid-area: extra1; }
-.extra2{ grid-area: extra2; }
-.extra3{ grid-area: extra3; }
-.extra4{ grid-area: extra4; }
-.extra5{ grid-area: extra5; }
-.extra6{ grid-area: extra6; }
+.extra1 {
+  grid-area: extra1;
+}
 
-.extra1 p{
+.extra2 {
+  grid-area: extra2;
+}
+
+.extra3 {
+  grid-area: extra3;
+}
+
+.extra4 {
+  grid-area: extra4;
+}
+
+.extra5 {
+  grid-area: extra5;
+}
+
+.extra6 {
+  grid-area: extra6;
+}
+
+.extra1 p {
   text-align: center;
 }
 
 /* aparência de "card" compartilhada por todos os itens extras,
    seja no .grade-extra (3 iguais) ou no .grade-extra2 (com áreas) */
-.item-extra{
-  background: rgba(255,255,255,0.04);
+.item-extra {
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.item-extra h3{
+.item-extra h3 {
   color: white;
   font: 700 26px "Barlow Condensed", sans-serif;
   text-transform: uppercase;
@@ -265,14 +309,14 @@ main{
   margin: 0 0 12px;
 }
 
-.item-extra p{
+.item-extra p {
   color: #c7cdd6;
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
 }
 
-.item-extra2{
+.item-extra2 {
   background: var(--fundo);
   border-radius: 10px;
   padding: 20px;
@@ -280,7 +324,7 @@ main{
   flex-direction: column;
 }
 
-.item-extra2 h3{
+.item-extra2 h3 {
   color: var(--azul);
   font: 700 26px "Barlow Condensed", sans-serif;
   text-transform: uppercase;
@@ -288,7 +332,7 @@ main{
   margin: 0 0 12px;
 }
 
-.item-extra2 p{
+.item-extra2 p {
   color: var(--azul-escuro);
   font-size: 15px;
   line-height: 1.5;
@@ -297,11 +341,12 @@ main{
 
 /* imagem dentro de um card: altura fixa com corte (cover),
    assim ela nunca estica a linha do grid inteira */
-.img-extra{
+.img-extra {
   display: block;
   width: 100%;
   flex: 1;
-  min-height: 200px;   /* nunca fica menor que isso */
+  min-height: 200px;
+  /* nunca fica menor que isso */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 14px;
@@ -310,22 +355,22 @@ main{
 /* no card sem imagem (extra1 e extra3), centraliza o conteúdo
    verticalmente, pra não ficar tudo "jogado" lá em cima */
 .extra1,
-.extra3{
+.extra3 {
   justify-content: center;
 }
 
 .extra1 p,
-.extra3 p{
+.extra3 p {
   text-align: center;
 }
 
-@media (max-width: 800px){
-  .grade-extra{
+@media (max-width: 800px) {
+  .grade-extra {
     grid-template-columns: 1fr;
   }
 
   /* empilha o grid de áreas também, um card embaixo do outro */
-  .grade-extra2{
+  .grade-extra2 {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
@@ -343,25 +388,25 @@ main{
    BLOCO SIMPLES — fundo claro (padrão do site), sem grid,
    pra texto livre tipo a página de Contato
 =================================================== */
-.bloco-simples{
+.bloco-simples {
   grid-column: 1 / -1;
   border-top: 1px solid var(--borda);
   background: var(--fundo);
   padding: 40px 56px;
 }
 
-.bloco2{
+.bloco2 {
   background-color: var(--fundo-alt);
 }
 
-.bloco-simples h2{
+.bloco-simples h2 {
   font: 700 28px "Barlow Condensed", sans-serif;
   text-transform: uppercase;
   color: var(--texto);
   margin: 0 0 10px;
 }
 
-.bloco-simples p{
+.bloco-simples p {
   color: var(--cinza);
   font-size: 16px;
   max-width: 70ch;
@@ -371,13 +416,13 @@ main{
 /* ===================================================
    HERO — imagem em banner, ocupando a largura toda
 =================================================== */
-.hero-imagem{
+.hero-imagem {
   grid-column: 1 / -1;
   width: 100%;
   overflow: hidden;
 }
 
-.hero-imagem img{
+.hero-imagem img {
   width: 100%;
   height: auto;
   display: block;
@@ -385,16 +430,20 @@ main{
 
 /* quando a página usa hero, o texto também ocupa a largura toda,
    ficando abaixo do banner em vez de do lado */
-.hero-texto{
+.hero-texto {
   grid-column: 1 / -1;
 }
 
 /* Página Tecnologia: conteúdo em largura total */
-main:has(#tecnologia.ativa){
+main:has(#tecnologia.ativa),
+main:has(#redes.ativa),
+main:has(#metodologias.ativa) {
   display: block;
 }
 
-#tecnologia .coluna-texto{
+#tecnologia .coluna-texto,
+#redes .coluna-texto,
+#metodologias .coluna-texto {
   width: 100%;
   padding: 56px;
 }
@@ -402,7 +451,7 @@ main:has(#tecnologia.ativa){
 /* ===================================================
    TAGS coloridas ("Robótica", "Automação"...)
 =================================================== */
-.tags{
+.tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -411,7 +460,7 @@ main:has(#tecnologia.ativa){
   margin: 8px 0 0;
 }
 
-.tags li{
+.tags li {
   background: var(--azul-clarinho);
   color: var(--azul);
   border-radius: 99px;
@@ -423,7 +472,7 @@ main:has(#tecnologia.ativa){
 /* ===================================================
    BOTÃO DE AÇÃO (azul, tipo "Conhecer o projeto")
 =================================================== */
-.botao-acao{
+.botao-acao {
   margin-top: 22px;
   background: var(--azul);
   color: white;
@@ -436,14 +485,20 @@ main:has(#tecnologia.ativa){
   transition: background 0.2s;
 }
 
-.botao-acao:hover{ background: var(--azul-escuro); }
+.botao-acao:hover {
+  background: var(--azul-escuro);
+}
 
 /* ===================================================
    LISTA DA EQUIPE
 =================================================== */
-.lista-equipe{ list-style: none; padding: 0; max-width: 460px; }
+.lista-equipe {
+  list-style: none;
+  padding: 0;
+  max-width: 460px;
+}
 
-.lista-equipe li{
+.lista-equipe li {
   background: white;
   border: 1px solid var(--borda);
   border-radius: 12px;
@@ -455,7 +510,7 @@ main:has(#tecnologia.ativa){
   gap: 12px;
 }
 
-.avatar{
+.avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -470,7 +525,7 @@ main:has(#tecnologia.ativa){
 /* ===================================================
    RODAPÉ
 =================================================== */
-footer{
+footer {
   text-align: center;
   padding: 16px;
   color: var(--cinza);
@@ -482,19 +537,31 @@ footer{
 /* ===================================================
    RESPONSIVO: TELAS DE CELULAR (até 800px)
 =================================================== */
-@media (max-width: 800px){
-  main{ grid-template-columns: 1fr; }
-  .coluna-imagem{ border-right: none; border-bottom: 1px solid var(--borda); }
-  .coluna-texto{ padding: 32px 24px; }
-  .coluna-texto h1{ font-size: 38px; }
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .coluna-imagem {
+    border-right: none;
+    border-bottom: 1px solid var(--borda);
+  }
+
+  .coluna-texto {
+    padding: 32px 24px;
+  }
+
+  .coluna-texto h1 {
+    font-size: 38px;
+  }
 }
 
 /* ===================================================
    MENU HAMBÚRGUER (mobile) — começa escondido
 =================================================== */
-.botao-hamburguer{
+.botao-hamburguer {
   display: none;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   border: none;
   border-radius: 8px;
@@ -503,7 +570,7 @@ footer{
   cursor: pointer;
 }
 
-.menu-mobile{
+.menu-mobile {
   display: none;
   list-style: none;
   margin: 0;
@@ -511,7 +578,7 @@ footer{
   background: var(--azul-escuro);
 }
 
-.menu-mobile button{
+.menu-mobile button {
   width: 100%;
   text-align: left;
   background: none;
@@ -522,21 +589,30 @@ footer{
   cursor: pointer;
 }
 
-.menu-mobile button:hover{
-  background: rgba(255,255,255,0.15);
+.menu-mobile button:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.menu-mobile.aberto{
+.menu-mobile-separador {
+  padding: 10px 12px 4px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.menu-mobile.aberto {
   display: block;
 }
 
 /* telas menores que 450px: "Sobre" e "Contato" viram hambúrguer */
-@media (max-width: 450px){
-  nav{
+@media (max-width: 600px) {
+  nav {
     display: none;
   }
 
-  .botao-hamburguer{
+  .botao-hamburguer {
     display: block;
   }
 }

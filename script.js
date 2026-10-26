@@ -1,16 +1,24 @@
 // abre e fecha o menu "Sobre"
-function alternarMenu(){
+function alternarMenu() {
   document.getElementById('menuSobre').classList.toggle('aberto')
+  document.getElementById('menuConteudo').classList.remove('aberto')
 }
- 
-// troca a página que está sendo exibida
-function mostrarPagina(id){
-  document.querySelectorAll('.pagina').forEach(pagina => pagina.classList.remove('ativa'))
-  document.getElementById(id).classList.add('ativa')
+
+// abre e fecha o menu "Conteúdo"
+function alternarMenuConteudo() {
+  document.getElementById('menuConteudo').classList.toggle('aberto')
   document.getElementById('menuSobre').classList.remove('aberto')
 }
 
+// troca a página que está sendo exibida
+function mostrarPagina(id) {
+  document.querySelectorAll('.pagina').forEach(pagina => pagina.classList.remove('ativa'))
+  document.getElementById(id).classList.add('ativa')
+  document.getElementById('menuSobre').classList.remove('aberto')
+  document.getElementById('menuConteudo').classList.remove('aberto')
+}
+
 // abre e fecha o menu hambúrguer (mobile)
-function alternarMenuMobile(){
+function alternarMenuMobile() {
   document.getElementById('menuMobile').classList.toggle('aberto');
 }
