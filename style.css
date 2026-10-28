@@ -263,6 +263,27 @@ main {
   gap: 24px;
 }
 
+.grade-extra-piramide {
+    display: grid;
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+    gap: 24px;
+
+    grid-template-areas:
+        ". . . . piramide-1 piramide-1 piramide-1 . . . ."
+        ". . . piramide-2 piramide-2 piramide-2 piramide-2 piramide-2 . . ."
+        ". . piramide-3 piramide-3 piramide-3 piramide-3 piramide-3 piramide-3 piramide-3 . ."
+        ". piramide-4 piramide-4 piramide-4 piramide-4 piramide-4 piramide-4 piramide-4 piramide-4 piramide-4 ."
+        "piramide-5 piramide-5 piramide-5 piramide-5 piramide-5 piramide-5 piramide-5 piramide-5 piramide-5 piramide-5 piramide-5"
+        ". piramide-6 piramide-6 piramide-6 piramide-6 piramide-6 piramide-6 piramide-6 piramide-6 piramide-6 .";
+}
+
+.piramide-1 { grid-area: piramide-1; }
+.piramide-2 { grid-area: piramide-2; }
+.piramide-3 { grid-area: piramide-3; }
+.piramide-4 { grid-area: piramide-4; }
+.piramide-5 { grid-area: piramide-5; }
+.piramide-6 { grid-area: piramide-6; }
+
 .extra1 {
   grid-area: extra1;
 }
@@ -510,6 +531,80 @@ main:has(#metodologias.ativa) {
   gap: 12px;
 }
 
+.item-equipe {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  color: var(--texto);
+  font: 600 16px Barlow, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.item-equipe:hover {
+  color: var(--azul);
+}
+
+.perfil-equipe .coluna-texto {
+  grid-column: 1;
+  grid-row: 1;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.perfil-imagem {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 520px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.perfil-imagem img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.foto-carlos {
+  object-position: 18% center;
+}
+
+.foto-miguel-alves {
+  object-position: 50% center;
+}
+
+.foto-miguel-silva {
+  object-position: 82% center;
+}
+
+.dados-equipe {
+  width: min(100%, 560px);
+  background: white;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.dados-equipe p {
+  margin: 0 0 12px;
+}
+
+.dados-equipe p:last-child {
+  margin-bottom: 0;
+}
+
+.dados-equipe a {
+  color: var(--azul);
+}
+
 .avatar {
   width: 40px;
   height: 40px;
@@ -553,6 +648,21 @@ footer {
 
   .coluna-texto h1 {
     font-size: 38px;
+  }
+
+  .perfil-equipe .coluna-texto {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .perfil-imagem {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 300px;
+    height: 300px;
+    padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--borda);
   }
 }
 
@@ -615,4 +725,39 @@ footer {
   .botao-hamburguer {
     display: block;
   }
+}
+
+/* CELULAR E TABLETS */
+@media (max-width: 768px) {
+    .grade-extra-piramide {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .piramide-1,
+    .piramide-2,
+    .piramide-3,
+    .piramide-4,
+    .piramide-5,
+    .piramide-6 {
+        grid-area: auto;
+        flex: 1 1 220px;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+    }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 480px) {
+    .grade-extra-piramide {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
 }

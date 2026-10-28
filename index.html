@@ -222,10 +222,55 @@
         <div class="coluna-texto">
           <h1><span class="linha-azul">Equipe</span><span class="linha-cinza">Quem fez este site</span></h1>
           <ul class="lista-equipe">
-            <li><span class="avatar">C</span> Carlos</li>
-            <li><span class="avatar">M</span> Miguel Alves</li>
-            <li><span class="avatar">M</span> Miguel da Silva</li>
+            <li><button class="item-equipe" onclick="mostrarPagina('carlos')"><span class="avatar">C</span> Carlos</button></li>
+            <li><button class="item-equipe" onclick="mostrarPagina('miguelAlves')"><span class="avatar">M</span> Miguel Alves</button></li>
+            <li><button class="item-equipe" onclick="mostrarPagina('miguelSilva')"><span class="avatar">M</span> Miguel da Silva</button></li>
           </ul>
+        </div>
+      </section>
+
+      <section class="pagina perfil-equipe" id="carlos">
+        <div class="coluna-texto">
+          <h1><span class="linha-azul">Carlos</span><span class="linha-cinza">Contato</span></h1>
+          <div class="dados-equipe">
+            <p><strong>GitHub:</strong> <a href="https://github.com/carlos1es5melo" target="_blank" rel="noopener">github.com/carlos1es5melo</a></p>
+            <p><strong>E-mail:</strong> <a href="mailto:oscarandre29100@gmail.com">oscarandre29100@gmail.com</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5548998109985">(48) 99810-9985</a></p>
+          </div>
+          <button class="botao-acao" onclick="mostrarPagina('equipe')">Voltar para equipe</button>
+        </div>
+        <div class="coluna-imagem perfil-imagem">
+          <img src="./img/grupo.png" alt="Carlos com a equipe" class="foto-carlos">
+        </div>
+      </section>
+
+      <section class="pagina perfil-equipe" id="miguelAlves">
+        <div class="coluna-texto">
+          <h1><span class="linha-azul">Miguel Alves</span><span class="linha-cinza">Contato</span></h1>
+          <div class="dados-equipe">
+            <p><strong>GitHub:</strong> <a href="https://github.com/Migz1512" target="_blank" rel="noopener">github.com/Migz1512</a></p>
+            <p><strong>E-mail:</strong> <a href="mailto:miguelartalves@gmail.com">miguelartalves@gmail.com</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+5548999778549">(48) 99977-8549</a></p>
+          </div>
+          <button class="botao-acao" onclick="mostrarPagina('equipe')">Voltar para equipe</button>
+        </div>
+        <div class="coluna-imagem perfil-imagem">
+          <img src="./img/grupo.png" alt="Miguel Alves com a equipe" class="foto-miguel-alves">
+        </div>
+      </section>
+
+      <section class="pagina perfil-equipe" id="miguelSilva">
+        <div class="coluna-texto">
+          <h1><span class="linha-azul">Miguel da Silva</span><span class="linha-cinza">Contato</span></h1>
+          <div class="dados-equipe">
+            <p><strong>GitHub:</strong> <a href="https://github.com/miguelsilva159-ctrl" target="_blank" rel="noopener">github.com/miguelsilva159-ctrl</a></p>
+            <p><strong>E-mail:</strong> <a href="mailto:mig123.tj@gmail.com">mig123.tj@gmail.com</a></p>
+            <p><strong>Telefone:</strong> <a href="tel:+554899579785">(48) 99579-785</a></p>
+          </div>
+          <button class="botao-acao" onclick="mostrarPagina('equipe')">Voltar para equipe</button>
+        </div>
+        <div class="coluna-imagem perfil-imagem">
+          <img src="./img/grupo.png" alt="Miguel da Silva com a equipe" class="foto-miguel-silva">
         </div>
       </section>
 
@@ -354,9 +399,6 @@
 
       <!-- Página: Pirâmide de Automação -->
       <section class="pagina" id="piramide">
-        <div class="coluna-imagem">
-          <img src="./img/piramide_automacao.jpg" alt="Pirâmide de Automação">
-        </div>
         <div class="coluna-texto">
           <h1><span class="linha-azul">Pirâmide de</span><span class="linha-cinza">Automação</span></h1>
           <p>A Pirâmide de Automação organiza os sistemas industriais em cinco níveis hierárquicos, do sensor no chão de
@@ -371,35 +413,30 @@
           </ul>
         </div>
         <div class="bloco-extra">
-          <div class="grade-extra">
-            <div class="item-extra">
+          <div class="grade-extra-piramide">
+            <div class="item-extra piramide-1">
               <h3>Nível 1 — Campo</h3>
               <p>Sensores e atuadores que medem o processo e executam os comandos. É onde tudo acontece fisicamente.</p>
             </div>
-            <div class="item-extra">
+            <div class="item-extra piramide-2">
               <h3>Nível 2 — Controle</h3>
               <p>CLPs e sistemas dedicados que executam as lógicas de controle e intertravamento em tempo real.</p>
             </div>
-            <div class="item-extra">
+            <div class="item-extra piramide-3">
               <h3>Nível 3 — Supervisão</h3>
               <p>Sistemas SCADA e IHMs que permitem monitorar o processo e intervir remotamente quando necessário.</p>
             </div>
-          </div>
-        </div>
-        <div class="bloco-extra2">
-          <div class="grade-extra">
-            <div class="item-extra2">
+            <div class="item-extra piramide-4">
               <h3>Nível 4 — Gerenciamento</h3>
               <p>Sistemas MES controlam a produção com foco em rendimento operacional, rastreabilidade e qualidade.</p>
             </div>
-            <div class="item-extra2">
+            <div class="item-extra piramide-5">
               <h3>Nível 5 — Estratégico</h3>
               <p>O ERP ocupa o topo, integrando planejamento financeiro, comercial e de recursos de toda a empresa.</p>
             </div>
-            <div class="item-extra2">
+            <div class="item-extra piramide-6">
               <h3>Por que importa?</h3>
-              <p>A pirâmide mostra que automação vai além do CLP. É a integração de todos esses níveis que torna uma
-                fábrica realmente inteligente.</p>
+              <p>A pirâmide mostra que automação vai além do CLP. É a integração de todos esses níveis que torna uma fábrica realmente inteligente.</p>
             </div>
           </div>
         </div>
